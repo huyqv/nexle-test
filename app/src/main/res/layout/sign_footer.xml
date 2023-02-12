@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="@dimen/contentMargin16"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/viewSeparator"
+        style="@style/VerticalSeparator"
+        android:layout_marginTop="@dimen/contentMargin16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewOr"
+        style="@style/TextView.Body"
+        android:background="@color/white"
+        android:text="  or  "
+        app:layout_constraintBottom_toBottomOf="@+id/viewSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/viewSeparator"
+        app:layout_constraintTop_toTopOf="@+id/viewSeparator" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewFacebook"
+        style="@style/Login.Button"
+        android:layout_marginTop="@dimen/contentMargin24"
+        android:src="@drawable/btn_facebook"
+        app:layout_constraintEnd_toStartOf="@+id/viewTwitter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSeparator" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewTwitter"
+        style="@style/Login.Button"
+        android:src="@drawable/btn_twitter"
+        app:layout_constraintEnd_toStartOf="@+id/viewMail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewFacebook"
+        app:layout_constraintTop_toTopOf="@+id/viewFacebook" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewMail"
+        style="@style/Login.Button"
+        android:src="@drawable/btn_mail"
+        app:layout_constraintEnd_toStartOf="@+id/viewGithub"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewTwitter"
+        app:layout_constraintTop_toTopOf="@+id/viewFacebook" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewGithub"
+        style="@style/Login.Button"
+        android:src="@drawable/btn_git"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewMail"
+        app:layout_constraintTop_toTopOf="@+id/viewFacebook" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

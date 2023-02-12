@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_background">#F8F8F8</color>
+
+    <color name="primary">#7367F0</color>
+    <color name="accent">#7367F0</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_heading">#5E5873</color>
+    <color name="text_default">#6E6B7B</color>
+    <color name="text_hint">#B9B9C3</color>
+    <color name="color_error">#EA5455</color>
+
+</resources>

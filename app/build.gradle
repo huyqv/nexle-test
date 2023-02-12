@@ -1,0 +1,135 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-kapt"
+}
+
+android {
+    namespace 'wee.digital.sample'
+    compileSdkVersion builds.compile_sdk
+    defaultConfig {
+        applicationId "wee.digital.sample"
+        minSdkVersion builds.min_sdk
+        targetSdkVersion builds.target_sdk
+        vectorDrawables.useSupportLibrary true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    flavorDimensions "default"
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    signingConfigs {
+        release {
+        }
+    }
+    buildTypes {
+        all {
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        release {
+            signingConfig signingConfigs.release
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+    productFlavors {
+        all { flavor ->
+        }
+        dev {
+            applicationIdSuffix ".dev"
+            versionCode 1
+            versionName "1.0.0"
+        }
+        prod {
+            versionCode 1
+            versionName "1.0.0"
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["libs"]
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    androidResources {
+        noCompress 'tflite'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ["*.jar", "*aar"], dir: "libs")
+
+    //Kotlin
+    implementation deps.kotlin.stdlib
+
+    //Concurrency pattern
+    implementation deps.kotlin.coroutines_core
+    implementation deps.kotlin.coroutines_android
+
+    //DI
+    implementation "io.insert-koin:koin-core:3.3.3"
+    implementation "io.insert-koin:koin-android:3.3.3"
+    implementation "io.insert-koin:koin-androidx-compose:3.4.2"
+    //implementation "org.koin:koin-androidx-scope:$koin_version"
+    //implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    //Android
+    implementation deps.android.activity
+    implementation deps.android.animation
+    implementation deps.android.annotation
+    implementation deps.android.appcompat
+    implementation deps.android.browser
+    implementation deps.android.cardview
+    implementation deps.android.constraintlayout
+    implementation deps.android.corektx
+    implementation deps.android.fragment
+    implementation deps.android.recyclerview
+    implementation deps.android.security
+    implementation deps.android.swiperefreshlayout
+    implementation deps.android.vectordrawable
+
+    //Google
+    implementation deps.google.gson
+
+    //Fragment navigation
+    implementation deps.navigation.fragment
+    implementation deps.navigation.ui
+
+    //Android lifecycle aware
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.livedata
+    kapt deps.lifecycle.compiler
+
+    //Http client, RestFUL api
+    implementation deps.square.retrofit
+    implementation deps.square.gson
+    implementation deps.square.okhttp
+    implementation deps.square.okhttp_url
+    implementation deps.square.okhttp_log
+
+    //Dimension resources
+    implementation deps.dimens.sdp
+    implementation deps.dimens.ssp
+
+    implementation deps.rounded_image_view
+
+}
+

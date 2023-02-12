@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--TextView-->
+    <style name="TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/textSize15</item>
+        <item name="android:textColor">@color/text_default</item>
+        <item name="android:background">@null</item>
+        <item name="android:fontFamily">@font/montserrat_400</item>
+    </style>
+
+    <style name="TextView.Error" parent="TextView">
+        <item name="android:textSize">@dimen/textSize12</item>
+        <item name="android:textColor">@color/color_error</item>
+    </style>
+
+    <style name="TextView.Heading4" parent="TextView">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:color">@color/text_heading</item>
+        <item name="android:fontFamily">@font/montserrat_500</item>
+    </style>
+
+    <style name="TextView.Body" parent="TextView">
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="Button" parent="TextView">
+        <item name="android:layout_height">@dimen/rowSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Button.Primary" parent="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:fontFamily">@font/montserrat_500</item>
+    </style>
+
+    <style name="Button.CheckBox" parent="TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/rowSize</item>
+        <item name="android:paddingEnd">@dimen/_16sdp</item>
+        <item name="android:paddingStart">@dimen/_8sdp</item>
+    </style>
+
+    <style name="EditText" parent="TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/rowSize</item>
+        <item name="android:textColor">#B9B9C3</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:inputType">textEmailAddress|textNoSuggestions</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:textIsSelectable">false</item>
+        <item name="android:privateImeOptions">nm</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:paddingStart">@dimen/contentMargin24</item>
+        <item name="android:paddingEnd">@dimen/contentMargin24</item>
+        <item name="android:textColorHint">#BEBEBE</item>
+        <item name="android:maxLength">256</item>
+        <item name="android:textSize">@dimen/textSize15</item>
+    </style>
+
+    <!--Layout-->
+    <style name="HorizontalSeparator">
+        <item name="android:layout_width">0.5px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#CDCDCD</item>
+    </style>
+
+    <style name="VerticalSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/text_hint</item>
+    </style>
+
+
+    <style name="Login"></style>
+
+    <style name="Login.Button">
+        <item name="android:layout_width">@dimen/_30sdp</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+    </style>
+
+
+</resources>
